@@ -1,38 +1,35 @@
 name: CI Implementation
 on:
-    push:
-        branches: [main]
-    pull_request:
+  push:
+    branches: [main]
+  pull_request:
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Chekout code
-              uses: actions/checkout@v3
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Chekout code
+        uses: actions/checkout@v3
 
-            - name: Setup node
-              uses: actions/setup-node@v3
-              with:
-                  node-version: 14.x
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.x
 
-            - name: start frontend
-              run: |
-                   cd contact-fox-frontend
-                   npm i
-                   npm start &
-                  
-            - name: start backend
-              run: |
-                   cd contact-fox-backend
-                   npm i
-                   npm start &
+      - name: start frontend
+        run: |
+          cd contact-fox-frontend
+          npm i
+          npm start &
 
-            - name: run test for login feature
-              run: |
-                   cd tests
-                   npm i @cucumber/cucumber
-                   npm i @playwright/test
-                   playwright
-                   npm run test:e2e ./features/login.feature:7                 
-            
+      - name: start backend
+        run: |
+          cd contact-fox-backend
+          npm i
+          npm start &
+
+      - name: run test for login feature
+        run: |
+          cd tests
+          npm i
+          npm run test:e2e ./features/login.feature:7
