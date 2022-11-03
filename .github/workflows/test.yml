@@ -16,6 +16,14 @@ jobs:
               with:
                   node-version: 14.x
 
-            - name: Run something here
-              run: node test.js
+            - name: start frontend
+              run: |
+                   cd contact-fox-frontend
+                   npm i
+                   npm start &
                   
+            - name: start backend
+              run: |
+                   cd contact-fox-backend
+                   npm i
+                   npm start &
