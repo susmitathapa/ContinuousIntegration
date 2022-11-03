@@ -27,3 +27,9 @@ jobs:
                    cd contact-fox-backend
                    npm i
                    npm start &
+
+            - name: run test for login feature
+              run: |
+                   cd tests
+                   npm run test:e2e ./features/login.feature:7                 
+            
