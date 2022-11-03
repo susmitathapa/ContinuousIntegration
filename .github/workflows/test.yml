@@ -31,5 +31,6 @@ jobs:
             - name: run test for login feature
               run: |
                    cd tests
+                   npm i @cucumber/cucumber
                    npm run test:e2e ./features/login.feature:7                 
             
