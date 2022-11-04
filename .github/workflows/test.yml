@@ -37,4 +37,4 @@ jobs:
         run: |
           cd tests
           npm i
-          npm run test:e2e ./features/newUserRegistration.feature:9 
+          npm run test:e2e ./features/newUserRegistration.feature
