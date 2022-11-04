@@ -28,8 +28,8 @@ jobs:
           npm i
           npm start &
 
-      - name: run test for login feature
+      - name: run test for registration feature
         run: |
           cd tests
           npm i
-          npm run test:e2e ./features/login.feature:7
+          npm run test:e2e ./features/newUserRegistration.feature:9 
