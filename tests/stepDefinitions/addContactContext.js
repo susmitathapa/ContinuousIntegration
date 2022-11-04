@@ -26,15 +26,15 @@ When("user adds the following contact:", async function (dataTable) {
   }
 });
 
-Then(
-  "user should see the added email {string} in the contact list:",
-  async function (email) {
-    const emailLocator = page.locator(addedEmailSelector);
-    const myArray = await emailLocator.allInnerTexts();
-    console.log(myArray);
-    for (let i=0; i<myArray.length;i++) {
-    console.log(myArray[i]);
-    if (email !== myArray[i].trim()){
-      throw new Error("the email is not listed in contact"
-  }
-});   
+// Then(
+//   "user should see the added email {string} in the contact list:",
+//   async function (email) {
+//     const emailLocator = page.locator(addedEmailSelector);
+//     const myArray = await emailLocator.allInnerTexts();
+//     console.log(myArray);
+//     for (let i=0; i<myArray.length;i++) {
+//     console.log(myArray[i]);
+//     if (email !== myArray[i].trim()){
+//       throw new Error("the email is not listed in contact"
+//   }
+// });   
