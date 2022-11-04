@@ -17,11 +17,11 @@ Feature: Register
          |name    |email                |password     |confirmPassword  |
          |Prisha  |p12risha3@gmail.com  |prisha12345  |prisha12345      | 
        And the user log outs
-       And user has been navigated to registration page
-       When the user registers with following credentials:
-         |name    |email                |password     |confirmPassword  |
-         |Prisha  |p12risha3@gmail.com  |prisha12345  |prisha12345      | 
-       Then user should see the message "User already exists. Please choose another email address."
+      #  And user has been navigated to registration page
+      #  When the user registers with following credentials:
+      #    |name    |email                |password     |confirmPassword  |
+      #    |Prisha  |p12risha3@gmail.com  |prisha12345  |prisha12345      | 
+      #  Then user should see the message "User already exists. Please choose another email address."
         
     Scenario Outline: New user registers with invalid inputs
        When the user registers with following credentials:
