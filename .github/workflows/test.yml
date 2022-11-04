@@ -40,10 +40,4 @@ jobs:
         run: |
           cd tests
           npm i
-          npm run test:e2e ./features/newUserRegistration.feature:15
-
-      - name: Upload screenshot
-        uses: actions/upload-artifact@v3
-        with:
-          name: screenshots.zip
-          path: tests/images
+          npm run test:e2e ./features/newUserRegistration.feature
