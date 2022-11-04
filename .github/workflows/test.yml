@@ -16,15 +16,20 @@ jobs:
         with:
           node-version: 14.x
 
-      - name: start frontend
-        run: |
-          cd contact-fox-frontend
-          npm i
-          npm start &
+      - name: Start MongoDB
+      uses: supercharge/mongodb-github-action@1.8.0
+      with:
+        mongodb-version: '5.0'
 
       - name: start backend
         run: |
           cd contact-fox-backend
+          npm i
+          npm start &
+  
+      - name: start frontend
+        run: |
+          cd contact-fox-frontend
           npm i
           npm start &
 
