@@ -13,7 +13,7 @@ BeforeAll(async () => {
   global.browser = await chromium.launch({
     //browser
     slowMo:100,
-    headless: false,
+    headless: true,
   });
 });
 
