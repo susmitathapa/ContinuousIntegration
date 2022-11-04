@@ -42,6 +42,7 @@ Given("the user log outs", async function () {
 Then("user should be navigated to the homepage", async function () {
   console.log("navigated to homepage");
   await page.isVisible(homePage.logoutSelector);
+  await page.click(homePage.logoutSelector);
 });
 
 //invalid credentials

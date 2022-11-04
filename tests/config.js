@@ -10,11 +10,7 @@ const {
 setDefaultTimeout(60000);
 
 BeforeAll(async () => {
-  global.browser = await chromium.launch({
-    //browser
-    slowMo:100,
-    headless: true,
-  });
+  global.browser = await chromium.launch();
 });
 
 Before(async () => {
@@ -27,7 +23,7 @@ AfterAll(async function () {
 });
 
 After(async function () {
+  await page.close();
   await context.close();
   await clearDatabase();
-  await page.close();
 });
