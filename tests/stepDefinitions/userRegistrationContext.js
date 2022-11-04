@@ -36,7 +36,11 @@ Given("the user has been navigated to homepage", async function () {
 });
 
 Given("the user log outs", async function () {
-  await page.click(homePage.logoutSelector);
+  try {
+    await page.click(homePage.logoutSelector);
+  } catch (error) {
+    await page.screenshot({ path: "images/screenshot.png" });
+  }
 });
 
 Then("user should be navigated to the homepage", async function () {

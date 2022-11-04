@@ -19,14 +19,14 @@ jobs:
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@1.8.0
         with:
-          mongodb-version: '5.0'
+          mongodb-version: "5.0"
 
       - name: start backend
         run: |
           cd contact-fox-backend
           npm i
           npm start &
-  
+
       - name: start frontend
         run: |
           cd contact-fox-frontend
@@ -38,3 +38,9 @@ jobs:
           cd tests
           npm i
           npm run test:e2e ./features/newUserRegistration.feature:15
+
+      - name: Upload screenshot
+        uses: actions/upload-artifact@v3
+        with:
+          name: screenshots.zip
+          path: tests/images
