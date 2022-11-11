@@ -29,6 +29,8 @@ if (process.env.NODE_ENV === "production") {
   );
 }
 
+app.get("/", (req, res) => res.send("Hello from server"));
+
 // Server port for the backend.
 const PORT = process.env.PORT || 5000;
 
